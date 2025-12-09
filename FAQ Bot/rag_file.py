@@ -1,11 +1,14 @@
-# rag_file.py
+
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 from dotenv import load_dotenv
-from langchain.document_loaders import UnstructuredExcelLoader
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
+
+# UPDATED: These modules are now imported from the 'langchain_community' package
+from langchain_community.document_loaders import UnstructuredExcelLoader
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
+
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 
@@ -89,3 +92,4 @@ def ask_bot(query):
         return "I don't know. Please wait for the Human reply."
 
     return answer
+
